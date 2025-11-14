@@ -69,3 +69,38 @@ void lista::mostrar() {
         actual = actual->siguiente;
     }
 }
+
+void lista::guardar_en_archivo(const char nombre_archivo[]) {
+    ofstream archivo(nombre_archivo);
+    if (!archivo.is_open()) {
+        cout << "no se pudo abrir " << nombre_archivo << " para guardar.\n";
+        return;
+    }
+
+    nododoble* actual = cabeza;
+    while (actual != nullptr) {
+        archivo << actual->id << "\n";
+        archivo << actual->nombre << "\n";
+        actual = actual->siguiente;
+    }
+    archivo.close();
+    cout << "datos guardados en " << nombre_archivo << ".\n";
+}
+
+void lista::cargar_de_archivo(const char nombre_archivo[]) {
+    ifstream archivo(nombre_archivo);
+    if (!archivo.is_open()) {
+        cout << "no se encontro " << nombre_archivo << ", se inicia vacio.\n";
+        return;
+    }
+
+    int id;
+    char nombre[50];
+    while (archivo >> id) {
+        archivo.ignore();
+        archivo.getline(nombre, 50);
+        insertar(nombre, id);
+    }
+    archivo.close();
+    cout << "datos cargados de " << nombre_archivo << ".\n";
+}

@@ -6,12 +6,18 @@
 using namespace std;
 
 int main() {
-    cout << "sistema con strings en memoria\n";
+    cout << "sistema con strings y archivos de texto\n";
 
     lista productos;
     lista clientes;
     lista pedidos;
     lista pagos;
+
+    // cargar datos al iniciar
+    productos.cargar_de_archivo("productos.txt");
+    clientes.cargar_de_archivo("clientes.txt");
+    pedidos.cargar_de_archivo("pedidos.txt");
+    pagos.cargar_de_archivo("pagos.txt");
 
     int opcion;
     do {
@@ -69,6 +75,12 @@ int main() {
             cout << "opcion invalida.\n";
         }
     } while (opcion != 5);
+
+    // guardar datos al salir
+    productos.guardar_en_archivo("productos.txt");
+    clientes.guardar_en_archivo("clientes.txt");
+    pedidos.guardar_en_archivo("pedidos.txt");
+    pagos.guardar_en_archivo("pagos.txt");
 
     cout << "fin del programa.\n";
     return 0;
