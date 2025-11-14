@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    cout << "sistema con strings en memoria\n";
+
 
     lista productos;
     lista clientes;
