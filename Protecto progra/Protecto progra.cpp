@@ -6,39 +6,64 @@
 using namespace std;
 
 int main() {
-    cout << "lista doblemente enlazada simple\n";
-    lista l;
-    int opcion;
+    cout << "sistema con strings en memoria\n";
 
+    lista productos;
+    lista clientes;
+    lista pedidos;
+    lista pagos;
+
+    int opcion;
     do {
-        cout << "\n1. insertar\n";
-        cout << "2. eliminar\n";
-        cout << "3. buscar\n";
-        cout << "4. mostrar\n";
+        cout << "\n=== menu ===\n";
+        cout << "1. productos\n";
+        cout << "2. clientes\n";
+        cout << "3. pedidos\n";
+        cout << "4. pagos\n";
         cout << "5. salir\n";
-        cout << "elige opcion: ";
+        cout << "elige categoria: ";
         cin >> opcion;
 
-        if (opcion == 1) {
-            int valor;
-            cout << "valor: ";
-            cin >> valor;
-            l.insertar(valor);
-        }
-        else if (opcion == 2) {
-            int valor;
-            cout << "valor a eliminar: ";
-            cin >> valor;
-            l.eliminar(valor);
-        }
-        else if (opcion == 3) {
-            int valor;
-            cout << "valor a buscar: ";
-            cin >> valor;
-            l.buscar(valor);
-        }
-        else if (opcion == 4) {
-            l.mostrar();
+        if (opcion >= 1 && opcion <= 4) {
+            lista* l = nullptr;
+            if (opcion == 1) l = &productos;
+            else if (opcion == 2) l = &clientes;
+            else if (opcion == 3) l = &pedidos;
+            else if (opcion == 4) l = &pagos;
+
+            int accion;
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "elige accion: ";
+            cin >> accion;
+
+            if (accion == 1) {
+                char nombre[50];
+                int id;
+                cout << "nombre: ";
+                cin.ignore();
+                cin.getline(nombre, 50);
+                cout << "id: ";
+                cin >> id;
+                l->insertar(nombre, id);
+            }
+            else if (accion == 2) {
+                int id;
+                cout << "id a eliminar: ";
+                cin >> id;
+                l->eliminar(id);
+            }
+            else if (accion == 3) {
+                int id;
+                cout << "id a buscar: ";
+                cin >> id;
+                l->buscar(id);
+            }
+            else if (accion == 4) {
+                l->mostrar();
+            }
+            else {
+                cout << "accion invalida.\n";
+            }
         }
         else if (opcion != 5) {
             cout << "opcion invalida.\n";

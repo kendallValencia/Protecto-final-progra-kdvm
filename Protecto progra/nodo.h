@@ -1,11 +1,11 @@
-
 #pragma once
 
 class nododoble {
 public:
-    int dato;
+    char nombre[50];  
+    int id;
     nododoble* siguiente;
     nododoble* anterior;
 
-    nododoble(int valor);
+    nododoble(const char nombre[], int valor);
 };

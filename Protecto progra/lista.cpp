@@ -6,8 +6,8 @@ lista::lista() {
     cabeza = nullptr;
 }
 
-void lista::insertar(int valor) {
-    nododoble* nuevo = new nododoble(valor);
+void lista::insertar(const char nombre[], int id) {
+    nododoble* nuevo = new nododoble(nombre, id);
 
     if (cabeza == nullptr) {
         cabeza = nuevo;
@@ -20,13 +20,13 @@ void lista::insertar(int valor) {
         actual->siguiente = nuevo;
         nuevo->anterior = actual;
     }
-    cout << "dato insertado.\n";
+    cout << "registro insertado.\n";
 }
 
-void lista::eliminar(int valor) {
+void lista::eliminar(int id) {
     nododoble* actual = cabeza;
     while (actual != nullptr) {
-        if (actual->dato == valor) {
+        if (actual->id == id) {
             if (actual->anterior != nullptr) {
                 actual->anterior->siguiente = actual->siguiente;
             }
@@ -37,36 +37,35 @@ void lista::eliminar(int valor) {
                 actual->siguiente->anterior = actual->anterior;
             }
             delete actual;
-            cout << "dato eliminado.\n";
+            cout << "registro eliminado.\n";
             return;
         }
         actual = actual->siguiente;
     }
-    cout << "dato no encontrado.\n";
+    cout << "registro no encontrado.\n";
 }
 
-void lista::buscar(int valor) {
+void lista::buscar(int id) {
     nododoble* actual = cabeza;
     while (actual != nullptr) {
-        if (actual->dato == valor) {
-            cout << "encontrado: " << actual->dato << "\n";
+        if (actual->id == id) {
+            cout << "encontrado: " << actual->nombre << " (id: " << actual->id << ")\n";
             return;
         }
         actual = actual->siguiente;
     }
-    cout << "dato no encontrado.\n";
+    cout << "registro no encontrado.\n";
 }
 
 void lista::mostrar() {
-    cout << "\n--- lista ---\n";
+    cout << "\n--- registros ---\n";
     if (cabeza == nullptr) {
-        cout << "lista vacia.\n";
+        cout << "no hay registros.\n";
         return;
     }
     nododoble* actual = cabeza;
     while (actual != nullptr) {
-        cout << actual->dato << " ";
+        cout << "nombre: " << actual->nombre << ", id: " << actual->id << "\n";
         actual = actual->siguiente;
     }
-    cout << "\n";
 }

@@ -9,8 +9,8 @@ private:
 public:
     lista();
 
-    void insertar(int valor);
-    void eliminar(int valor);
-    void buscar(int valor);
+    void insertar(const char nombre[], int id);
+    void eliminar(int id);
+    void buscar(int id);
     void mostrar();
 };
