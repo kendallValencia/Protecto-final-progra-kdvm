@@ -2,7 +2,7 @@
 
 class nododoble {
 public:
-    char nombre[50];  
+    char nombre[50];
     int id;
     nododoble* siguiente;
     nododoble* anterior;

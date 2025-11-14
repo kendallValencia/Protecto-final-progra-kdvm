@@ -1,7 +1,6 @@
 #pragma once
 #include "nodo.h"
 #include <iostream>
-#include <fstream>
 
 class lista {
 private:
@@ -14,7 +13,4 @@ public:
     void eliminar(int id);
     void buscar(int id);
     void mostrar();
-
-    void guardar_en_archivo(const char nombre_archivo[]);
-    void cargar_de_archivo(const char nombre_archivo[]);
 };

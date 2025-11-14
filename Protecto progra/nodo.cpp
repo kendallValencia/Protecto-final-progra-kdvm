@@ -1,6 +1,5 @@
 #include "nodo.h"
 
-
 void copiar(char destino[], const char origen[]) {
     int i = 0;
     while (origen[i] != '\0' && i < 49) {
