@@ -4,14 +4,11 @@
 #include "clientes.h"
 #include "pedidos.h"
 #include "pagos.h"
-
-#include "lista.h"
-#include "lista.h"
 #include <iostream>
 using namespace std;
 
 int main() {
-    cout << "sistema con strings en memoria\n";
+    cout << "sistema simple\n";
 
     productos prod;
     clientes cli;
@@ -133,7 +130,6 @@ int main() {
     cout << "fin del programa.\n";
     return 0;
 }
-
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
