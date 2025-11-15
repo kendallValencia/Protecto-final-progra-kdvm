@@ -123,13 +123,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lista.cpp" />
+    <ClCompile Include="clientes.cpp" />
     <ClCompile Include="nodo.cpp" />
+    <ClCompile Include="pagos.cpp" />
+    <ClCompile Include="pedidos.cpp" />
+    <ClCompile Include="productos.cpp" />
     <ClCompile Include="Protecto progra.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lista.h" />
+    <ClInclude Include="clientes.h" />
     <ClInclude Include="nodo.h" />
+    <ClInclude Include="pagos.h" />
+    <ClInclude Include="pedidos.h" />
+    <ClInclude Include="productos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

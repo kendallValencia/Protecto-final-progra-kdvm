@@ -1,5 +1,9 @@
 // Protecto progra.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+#include "productos.h"
+#include "clientes.h"
+#include "pedidos.h"
+#include "pagos.h"
 
 #include "lista.h"
 #include "lista.h"
@@ -7,12 +11,12 @@
 using namespace std;
 
 int main() {
+    cout << "sistema con strings en memoria\n";
 
-
-    lista productos;
-    lista clientes;
-    lista pedidos;
-    lista pagos;
+    productos prod;
+    clientes cli;
+    pedidos ped;
+    pagos pag;
 
     int opcion;
     do {
@@ -22,45 +26,100 @@ int main() {
         cout << "3. pedidos\n";
         cout << "4. pagos\n";
         cout << "5. salir\n";
-        cout << "elige categoria: ";
+        cout << "elige opcion: ";
         cin >> opcion;
 
-        if (opcion >= 1 && opcion <= 4) {
-            lista* l = nullptr;
-            if (opcion == 1) l = &productos;
-            else if (opcion == 2) l = &clientes;
-            else if (opcion == 3) l = &pedidos;
-            else if (opcion == 4) l = &pagos;
-
+        if (opcion == 1) {
             int accion;
             cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
             cout << "elige accion: ";
             cin >> accion;
-
             if (accion == 1) {
-                char nombre[50];
-                int id;
-                cout << "nombre: ";
-                cin.ignore();
-                cin.getline(nombre, 50);
-                cout << "id: ";
-                cin >> id;
-                l->insertar(nombre, id);
+                char nombre[50]; int id;
+                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
+                cout << "id: "; cin >> id;
+                prod.insertar(nombre, id);
             }
             else if (accion == 2) {
-                int id;
-                cout << "id a eliminar: ";
-                cin >> id;
-                l->eliminar(id);
+                int id; cout << "id: "; cin >> id; prod.eliminar(id);
             }
             else if (accion == 3) {
-                int id;
-                cout << "id a buscar: ";
-                cin >> id;
-                l->buscar(id);
+                int id; cout << "id: "; cin >> id; prod.buscar(id);
             }
             else if (accion == 4) {
-                l->mostrar();
+                prod.mostrar();
+            }
+            else {
+                cout << "accion invalida.\n";
+            }
+        }
+        else if (opcion == 2) {
+            int accion;
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "elige accion: ";
+            cin >> accion;
+            if (accion == 1) {
+                char nombre[50]; int id;
+                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
+                cout << "id: "; cin >> id;
+                cli.insertar(nombre, id);
+            }
+            else if (accion == 2) {
+                int id; cout << "id: "; cin >> id; cli.eliminar(id);
+            }
+            else if (accion == 3) {
+                int id; cout << "id: "; cin >> id; cli.buscar(id);
+            }
+            else if (accion == 4) {
+                cli.mostrar();
+            }
+            else {
+                cout << "accion invalida.\n";
+            }
+        }
+        else if (opcion == 3) {
+            int accion;
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "elige accion: ";
+            cin >> accion;
+            if (accion == 1) {
+                char nombre[50]; int id;
+                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
+                cout << "id: "; cin >> id;
+                ped.insertar(nombre, id);
+            }
+            else if (accion == 2) {
+                int id; cout << "id: "; cin >> id; ped.eliminar(id);
+            }
+            else if (accion == 3) {
+                int id; cout << "id: "; cin >> id; ped.buscar(id);
+            }
+            else if (accion == 4) {
+                ped.mostrar();
+            }
+            else {
+                cout << "accion invalida.\n";
+            }
+        }
+        else if (opcion == 4) {
+            int accion;
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "elige accion: ";
+            cin >> accion;
+            if (accion == 1) {
+                char nombre[50]; int id;
+                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
+                cout << "id: "; cin >> id;
+                pag.insertar(nombre, id);
+            }
+            else if (accion == 2) {
+                int id; cout << "id: "; cin >> id; pag.eliminar(id);
+            }
+            else if (accion == 3) {
+                int id; cout << "id: "; cin >> id; pag.buscar(id);
+            }
+            else if (accion == 4) {
+                pag.mostrar();
             }
             else {
                 cout << "accion invalida.\n";

@@ -2,17 +2,15 @@
 #include "nodo.h"
 #include <iostream>
 
-class lista {
+class productos {
 private:
     nododoble* cabeza;
 
 public:
-    lista();
+    productos();
 
     void insertar(const char nombre[], int id);
     void eliminar(int id);
     void buscar(int id);
     void mostrar();
- 
-
 };
