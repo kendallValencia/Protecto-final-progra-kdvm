@@ -18,18 +18,36 @@
     <ClCompile Include="Protecto progra.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lista.cpp">
+    <ClCompile Include="nodo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="nodo.cpp">
+    <ClCompile Include="productos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clientes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pedidos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pagos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lista.h">
+    <ClInclude Include="nodo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="nodo.h">
+    <ClInclude Include="productos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clientes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pedidos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pagos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
