@@ -30,16 +30,26 @@ int main() {
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
-                char nombre[50]; int id;
-                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
-                cout << "id: "; cin >> id;
+                char nombre[50];
+                int id;
+                cout << "nombre: ";
+                cin.ignore();
+                cin.getline(nombre, 50);
+                cout << "id: ";
+                cin >> id;
                 prod.insertar(nombre, id);
             }
             else if (accion == 2) {
-                int id; cout << "id: "; cin >> id; prod.eliminar(id);
+                int id;
+                cout << "id: ";
+                cin >> id;
+                prod.eliminar(id);
             }
             else if (accion == 3) {
-                int id; cout << "id: "; cin >> id; prod.buscar(id);
+                int id;
+                cout << "id: ";
+                cin >> id;
+                prod.buscar(id);
             }
             else if (accion == 4) {
                 prod.mostrar();
@@ -54,16 +64,26 @@ int main() {
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
-                char nombre[50]; int id;
-                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
-                cout << "id: "; cin >> id;
+                char nombre[50];
+                int id;
+                cout << "nombre: ";
+                cin.ignore();
+                cin.getline(nombre, 50);
+                cout << "id: ";
+                cin >> id;
                 cli.insertar(nombre, id);
             }
             else if (accion == 2) {
-                int id; cout << "id: "; cin >> id; cli.eliminar(id);
+                int id;
+                cout << "id: ";
+                cin >> id;
+                cli.eliminar(id);
             }
             else if (accion == 3) {
-                int id; cout << "id: "; cin >> id; cli.buscar(id);
+                int id;
+                cout << "id: ";
+                cin >> id;
+                cli.buscar(id);
             }
             else if (accion == 4) {
                 cli.mostrar();
@@ -78,16 +98,26 @@ int main() {
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
-                char nombre[50]; int id;
-                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
-                cout << "id: "; cin >> id;
+                char nombre[50];
+                int id;
+                cout << "nombre: ";
+                cin.ignore();
+                cin.getline(nombre, 50);
+                cout << "id: ";
+                cin >> id;
                 ped.insertar(nombre, id);
             }
             else if (accion == 2) {
-                int id; cout << "id: "; cin >> id; ped.eliminar(id);
+                int id;
+                cout << "id: ";
+                cin >> id;
+                ped.eliminar(id);
             }
             else if (accion == 3) {
-                int id; cout << "id: "; cin >> id; ped.buscar(id);
+                int id;
+                cout << "id: ";
+                cin >> id;
+                ped.buscar(id);
             }
             else if (accion == 4) {
                 ped.mostrar();
@@ -98,23 +128,38 @@ int main() {
         }
         else if (opcion == 4) {
             int accion;
-            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n5. estadisticas\n";
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
-                char nombre[50]; int id;
-                cout << "nombre: "; cin.ignore(); cin.getline(nombre, 50);
-                cout << "id: "; cin >> id;
-                pag.insertar(nombre, id);
+                char nombre[50];
+                int monto;
+                cout << "descripcion: ";
+                cin.ignore();
+                cin.getline(nombre, 50);
+                cout << "monto: ";
+                cin >> monto;
+                pag.insertar(nombre, monto);
             }
             else if (accion == 2) {
-                int id; cout << "id: "; cin >> id; pag.eliminar(id);
+                int monto;
+                cout << "monto: ";
+                cin >> monto;
+                pag.eliminar(monto);
             }
             else if (accion == 3) {
-                int id; cout << "id: "; cin >> id; pag.buscar(id);
+                int monto;
+                cout << "monto: ";
+                cin >> monto;
+                pag.buscar(monto);
             }
             else if (accion == 4) {
                 pag.mostrar();
+            }
+            else if (accion == 5) {
+                cout << "cantidad total de pagos: " << pag.cantidad_total() << "\n";
+                cout << "monto total: " << pag.monto_total() << "\n";
+                cout << "promedio: " << pag.promedio() << "\n";
             }
             else {
                 cout << "accion invalida.\n";

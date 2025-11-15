@@ -6,8 +6,8 @@ pagos::pagos() {
     cabeza = nullptr;
 }
 
-void pagos::insertar(const char nombre[], int id) {
-    nododoble* nuevo = new nododoble(nombre, id);
+void pagos::insertar(const char descripcion[], int monto) {
+    nododoble* nuevo = new nododoble(descripcion, monto); 
     if (cabeza == nullptr) {
         cabeza = nuevo;
     }
@@ -22,10 +22,10 @@ void pagos::insertar(const char nombre[], int id) {
     cout << "pago insertado.\n";
 }
 
-void pagos::eliminar(int id) {
+void pagos::eliminar(int monto) {
     nododoble* actual = cabeza;
     while (actual != nullptr) {
-        if (actual->id == id) {
+        if (actual->id == monto) {
             if (actual->anterior != nullptr) {
                 actual->anterior->siguiente = actual->siguiente;
             }
@@ -44,11 +44,11 @@ void pagos::eliminar(int id) {
     cout << "pago no encontrado.\n";
 }
 
-void pagos::buscar(int id) {
+void pagos::buscar(int monto) {
     nododoble* actual = cabeza;
     while (actual != nullptr) {
-        if (actual->id == id) {
-            cout << "encontrado: " << actual->nombre << " (id: " << actual->id << ")\n";
+        if (actual->id == monto) {
+            cout << "encontrado: " << actual->nombre << " (monto: " << actual->id << ")\n";
             return;
         }
         actual = actual->siguiente;
@@ -64,7 +64,35 @@ void pagos::mostrar() {
     }
     nododoble* actual = cabeza;
     while (actual != nullptr) {
-        cout << "nombre: " << actual->nombre << ", id: " << actual->id << "\n";
+        cout << "descripcion: " << actual->nombre << ", monto: " << actual->id << "\n";
         actual = actual->siguiente;
     }
+}
+
+
+
+int pagos::cantidad_total() {
+    int contador = 0;
+    nododoble* actual = cabeza;
+    while (actual != nullptr) {
+        contador++;
+        actual = actual->siguiente;
+    }
+    return contador;
+}
+
+int pagos::monto_total() {
+    int total = 0;
+    nododoble* actual = cabeza;
+    while (actual != nullptr) {
+        total += actual->id;
+        actual = actual->siguiente;
+    }
+    return total;
+}
+
+int pagos::promedio() {
+    int cant = cantidad_total();
+    if (cant == 0) return 0;
+    return monto_total() / cant;
 }
