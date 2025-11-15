@@ -1,6 +1,7 @@
 #pragma once
 #include "nodo.h"
 #include <iostream>
+#include <fstream>
 
 class pagos {
 private:
@@ -9,13 +10,15 @@ private:
 public:
     pagos();
 
-    void insertar(const char descripcion[], int monto); // monto en lugar de id
+    void insertar(const char descripcion[], int monto);
     void eliminar(int monto);
     void buscar(int monto);
     void mostrar();
 
-   
     int cantidad_total();
     int monto_total();
-    float promedio();
+    int promedio();
+
+    void guardar_en_archivo();
+    void leer_archivo();
 };

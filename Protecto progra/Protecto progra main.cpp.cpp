@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-
+    cout << "sistema simple\n";
 
     productos prod;
     clientes cli;
@@ -26,7 +26,7 @@ int main() {
 
         if (opcion == 1) {
             int accion;
-            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n5. guardar en archivo\n6. leer archivo\n";
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
@@ -54,13 +54,19 @@ int main() {
             else if (accion == 4) {
                 prod.mostrar();
             }
+            else if (accion == 5) {
+                prod.guardar_en_archivo();
+            }
+            else if (accion == 6) {
+                prod.leer_archivo();
+            }
             else {
                 cout << "accion invalida.\n";
             }
         }
         else if (opcion == 2) {
             int accion;
-            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n5. guardar en archivo\n6. leer archivo\n";
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
@@ -88,13 +94,19 @@ int main() {
             else if (accion == 4) {
                 cli.mostrar();
             }
+            else if (accion == 5) {
+                cli.guardar_en_archivo();
+            }
+            else if (accion == 6) {
+                cli.leer_archivo();
+            }
             else {
                 cout << "accion invalida.\n";
             }
         }
         else if (opcion == 3) {
             int accion;
-            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n";
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n5. guardar en archivo\n6. leer archivo\n";
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
@@ -122,13 +134,19 @@ int main() {
             else if (accion == 4) {
                 ped.mostrar();
             }
+            else if (accion == 5) {
+                ped.guardar_en_archivo();
+            }
+            else if (accion == 6) {
+                ped.leer_archivo();
+            }
             else {
                 cout << "accion invalida.\n";
             }
         }
         else if (opcion == 4) {
             int accion;
-            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n5. estadisticas\n";
+            cout << "\n1. insertar\n2. eliminar\n3. buscar\n4. mostrar\n5. estadisticas\n6. guardar en archivo\n7. leer archivo\n";
             cout << "elige accion: ";
             cin >> accion;
             if (accion == 1) {
@@ -160,6 +178,12 @@ int main() {
                 cout << "cantidad total de pagos: " << pag.cantidad_total() << "\n";
                 cout << "monto total: " << pag.monto_total() << "\n";
                 cout << "promedio: " << pag.promedio() << "\n";
+            }
+            else if (accion == 6) {
+                pag.guardar_en_archivo();
+            }
+            else if (accion == 7) {
+                pag.leer_archivo();
             }
             else {
                 cout << "accion invalida.\n";

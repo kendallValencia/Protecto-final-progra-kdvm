@@ -91,8 +91,39 @@ int pagos::monto_total() {
     return total;
 }
 
-float pagos::promedio() {
+int pagos::promedio() {
     int cant = cantidad_total();
     if (cant == 0) return 0;
     return monto_total() / cant;
+}
+
+void pagos::guardar_en_archivo() {
+    ofstream archivo("pagos.txt");
+    if (!archivo) {
+        cout << "no se pudo crear el archivo\n";
+        return;
+    }
+
+    archivo << "pagos\n";
+    nododoble* actual = cabeza;
+    while (actual != nullptr) {
+        archivo << actual->id << " - " << actual->nombre << "\n"; // id = monto
+        actual = actual->siguiente;
+    }
+    archivo.close();
+    cout << "guardado en pagos.txt\n";
+}
+
+void pagos::leer_archivo() {
+    ifstream archivo("pagos.txt");
+    if (!archivo) {
+        cout << "no se pudo abrir el archivo\n";
+        return;
+    }
+
+    char linea[100];
+    while (archivo.getline(linea, 100)) {
+        cout << linea << "\n";
+    }
+    archivo.close();
 }

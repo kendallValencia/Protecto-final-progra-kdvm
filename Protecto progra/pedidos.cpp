@@ -68,3 +68,35 @@ void pedidos::mostrar() {
         actual = actual->siguiente;
     }
 }
+
+
+void pedidos::guardar_en_archivo() {
+    ofstream archivo("pedidos.txt");
+    if (!archivo) {
+        cout << "no se pudo crear el archivo\n";
+        return;
+    }
+
+    archivo << "pedidos\n";
+    nododoble* actual = cabeza;
+    while (actual != nullptr) {
+        archivo << actual->id << " - " << actual->nombre << "\n";
+        actual = actual->siguiente;
+    }
+    archivo.close();
+    cout << "guardado en pedidos.txt\n";
+}
+
+void pedidos::leer_archivo() {
+    ifstream archivo("pedidos.txt");
+    if (!archivo) {
+        cout << "no se pudo abrir el archivo\n";
+        return;
+    }
+
+    char linea[100];
+    while (archivo.getline(linea, 100)) {
+        cout << linea << "\n";
+    }
+    archivo.close();
+}

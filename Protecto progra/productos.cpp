@@ -68,3 +68,34 @@ void productos::mostrar() {
         actual = actual->siguiente;
     }
 }
+
+void productos::guardar_en_archivo() {
+    ofstream archivo("productos.txt");
+    if (!archivo) {
+        cout << "no se pudo crear el archivo\n";
+        return;
+    }
+
+    archivo << "productos\n";
+    nododoble* actual = cabeza;
+    while (actual != nullptr) {
+        archivo << actual->id << " - " << actual->nombre << "\n";
+        actual = actual->siguiente;
+    }
+    archivo.close();
+    cout << "guardado en productos.txt\n";
+}
+
+void productos::leer_archivo() {
+    ifstream archivo("productos.txt");
+    if (!archivo) {
+        cout << "no se pudo abrir el archivo\n";
+        return;
+    }
+
+    char linea[100];
+    while (archivo.getline(linea, 100)) {
+        cout << linea << "\n";
+    }
+    archivo.close();
+}

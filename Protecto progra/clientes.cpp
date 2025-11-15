@@ -68,3 +68,34 @@ void clientes::mostrar() {
         actual = actual->siguiente;
     }
 }
+
+void clientes::guardar_en_archivo() {
+    ofstream archivo("clientes.txt");
+    if (!archivo) {
+        cout << "no se pudo crear el archivo\n";
+        return;
+    }
+
+    archivo << "clientes\n";
+    nododoble* actual = cabeza;
+    while (actual != nullptr) {
+        archivo << actual->id << " - " << actual->nombre << "\n";
+        actual = actual->siguiente;
+    }
+    archivo.close();
+    cout << "guardado en clientes.txt\n";
+}
+
+void clientes::leer_archivo() {
+    ifstream archivo("clientes.txt");
+    if (!archivo) {
+        cout << "no se pudo abrir el archivo\n";
+        return;
+    }
+
+    char linea[100];
+    while (archivo.getline(linea, 100)) {
+        cout << linea << "\n";
+    }
+    archivo.close();
+}
