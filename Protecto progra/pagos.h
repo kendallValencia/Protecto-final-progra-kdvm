@@ -17,5 +17,5 @@ public:
    
     int cantidad_total();
     int monto_total();
-    int promedio();
+    float promedio();
 };

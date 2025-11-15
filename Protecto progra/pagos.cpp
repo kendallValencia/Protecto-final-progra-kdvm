@@ -91,7 +91,7 @@ int pagos::monto_total() {
     return total;
 }
 
-int pagos::promedio() {
+float pagos::promedio() {
     int cant = cantidad_total();
     if (cant == 0) return 0;
     return monto_total() / cant;
