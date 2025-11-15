@@ -128,7 +128,7 @@
     <ClCompile Include="pagos.cpp" />
     <ClCompile Include="pedidos.cpp" />
     <ClCompile Include="productos.cpp" />
-    <ClCompile Include="Protecto progra.cpp" />
+    <ClCompile Include="Protecto progra main.cpp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clientes.h" />
